@@ -1,9 +1,13 @@
 from settings import *
 from tetris import Tetris, Text
+from settings import MUSIC_PATH
 import sys
 import pathlib
-import time
-
+from pygame import mixer
+mixer.init()
+mixer.music.load(MUSIC_PATH)
+mixer.music.set_volume(0.5)
+mixer.music.play(100, 1, 0)
 class App:
     def __init__(self):
         pg.init()
@@ -40,17 +44,6 @@ class App:
         self.text.draw()
         pg.display.flip()
 
-    def time(self):
-        timer = 5
-        for x in range(timer, -1, -1):
-            seconds = x % 60
-            minutes = int(x / 60) % 60
-            hours = int(x / 3600)
-            print(f"{hours:02}:{minutes:02}:{seconds:02}")
-        pg.quit()
-        sys.exit()
-
-
     def check_events(self):
         self.anim_trigger = False
         self.fast_anim_trigger = False
@@ -64,15 +57,11 @@ class App:
                 self.anim_trigger = True
             elif event.type == self.fast_user_event:
                 self.fast_anim_trigger = True
-
-
     def run(self):
         while True:
             self.check_events()
             self.update()
             self.draw()
-            self.time()
-
 
 if __name__ == '__main__':
     app = App()
