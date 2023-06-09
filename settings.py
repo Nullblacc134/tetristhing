@@ -1,13 +1,14 @@
 import pygame as pg
-import time
 vec = pg.math.Vector2
 
 FPS = 10000
-FIELD_COLOR = (48, 39, 32)
-BG_COLOR = (24, 89, 117)
+FIELD_COLOR = 'black'
+BG_COLOR = 'black'
 clock = 0
 SPRITE_DIR_PATH = 'assets/sprites'
-FONT_PATH = 'assets/fonts/PressStart2P-Regular.ttf'
+FONT_PATH = 'assets/fonts/Pixeboy-z8XGD.ttf'
+MUSIC_PATH = 'assets/fonts/Original_Tetris_theme_(Tetris_Soundtrack).mp3'
+MUSIC = 'assets/fonts/Tetris_(Game_Boy)_Line_Clear_Sound_Effects.mp3'
 
 ANIM_TIME_INTERVAL = 500  # milliseconds
 FAST_ANIM_TIME_INTERVAL = 90
